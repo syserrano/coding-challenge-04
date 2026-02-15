@@ -29,6 +29,7 @@ let products = [
 
 //discount based on category
 //using for..of loop
+//and switch statement to apply discounts
 for (let product of products)
 { 
     switch (product.category)
@@ -50,3 +51,23 @@ for (let product of products)
     }
 }
 
+
+//customer types
+//using if else statements to apply discounts
+
+let customerType = ["Regular", "Student", "VIP"]
+for (let type of customerType)
+{
+    if (type == "Regular")
+    {
+        product.price *= 0.95; // 5% additional discount
+    }
+    else if (type == "Student")
+    {
+        product.price *= 0.90; // 7% additional discount
+    }
+    else if (type == "VIP")
+    {
+        product.price *= 0.85; // 11% additional discount
+    }
+}
