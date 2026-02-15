@@ -65,11 +65,11 @@ for (let type of customerType)
     }
     else if (type == "Student")
     {
-        products.price *= 0.90; // 7% additional discount
+        products.price *= 0.93; // 7% additional discount
     }
     else if (type == "VIP")
     {
-        products.price *= 0.85; // 11% additional discount
+        products.price *= 0.89; // 11% additional discount
     }
 }
 
@@ -107,4 +107,26 @@ for (let customer of customerPurchase)
     for (let item of customer.purchase)
     {
         let product = products.find(p => p.name === item);
+        if (product && product.inventory > 0)
+        {
+            totalCost += product.price;
+            product.inventory--;
+        }
     }
+    
+    if (customer.type == "Regular")
+    {
+        totalCost *= 0.95; // 5% additional discount
+    }
+    else if (customer.type == "Student")
+    {
+        totalCost *= 0.93; // 7% additional discount
+    }
+    else if (customer.type == "VIP")
+    {
+        totalCost *= 0.89; // 11% additional discount
+    }
+
+    console.log(`Customer ${customer.number} - Total Cost: $${totalCost.toFixed(2)}`);
+}
+
