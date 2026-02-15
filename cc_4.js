@@ -27,6 +27,7 @@ let products = [
     }
 ]
 
+
 //discount based on category
 //using for..of loop
 //and switch statement to apply discounts
@@ -60,14 +61,50 @@ for (let type of customerType)
 {
     if (type == "Regular")
     {
-        product.price *= 0.95; // 5% additional discount
+        products.price *= 0.95; // 5% additional discount
     }
     else if (type == "Student")
     {
-        product.price *= 0.90; // 7% additional discount
+        products.price *= 0.90; // 7% additional discount
     }
     else if (type == "VIP")
     {
-        product.price *= 0.85; // 11% additional discount
+        products.price *= 0.85; // 11% additional discount
     }
 }
+
+
+//customers and their purchases
+let customerPurchase = [
+    {
+        name: "Alan E",
+        type: "Regular",
+        number: "1",
+        purchase: ["Wipes", "Notebook"]
+    },
+    {
+        name: "Shell Ceeus",
+        type: "Student",
+        number: "2",
+        purchase: ["Backpack", "Socks"]
+    },
+    {
+        name: "Rhed Bhul",
+        type: "VIP",
+        number: "3",
+        purchase: ["Trashcan", "Wipes", "Notebook"]
+    }
+]
+
+//simulating checkout process
+//using for loop to calculate discounted total
+//reduce product inv count
+//display customer number and total cost
+for (let customer of customerPurchase)
+{
+    let totalCost = 0;
+
+    for (let item of customer.purchase)
+    {
+        let product = products.find(p => p.name === item);
+    }
