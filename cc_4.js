@@ -31,8 +31,22 @@ let products = [
 //using for..of loop
 for (let product of products)
 { 
-    if (product.category == "Hygiene")
-    {
-        product.price *= 0.85; //15% discount
+    switch (product.category)
+    { 
+    case "Hygiene":
+        product.price *= 0.85;
+        break;
+    case "Household":
+        product.price *= 0.90;
+        break;
+    case "Accessories":
+        product.price *= 0.95;
+        break;
+    case "Clothing":
+        product.price *= 0.80;
+        break;
+    case "Stationery":
+        break;
     }
 }
+
