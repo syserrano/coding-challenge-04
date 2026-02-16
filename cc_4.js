@@ -29,8 +29,6 @@ let products = [
 
 
 //discount based on category
-//using for..of loop
-//and switch statement to apply discounts
 for (let product of products)
 { 
     switch (product.category)
@@ -54,8 +52,6 @@ for (let product of products)
 
 
 //customer types
-//using if else statements to apply discounts
-
 let customerType = ["Regular", "Student", "VIP"]
 for (let type of customerType)
 {
@@ -97,9 +93,6 @@ let customerPurchase = [
 ]
 
 //simulating checkout process
-//using for loop to calculate discounted total
-//reduce product inv count
-//display customer number and total cost
 for (let customer of customerPurchase)
 {
     let totalCost = 0;
@@ -128,5 +121,12 @@ for (let customer of customerPurchase)
     }
 
     console.log(`Customer ${customer.number} - Total Cost: $${totalCost.toFixed(2)}`);
+}
+
+//logging values of Wipes
+let oneProduct = products[0];
+for (let key in oneProduct)
+{
+    console.log(`${key}: ${oneProduct[key]}`);
 }
 
