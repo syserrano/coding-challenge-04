@@ -130,3 +130,9 @@ for (let key in oneProduct)
     console.log(`${key}: ${oneProduct[key]}`);
 }
 
+Object.entries(products).forEach(([index, product]) => {
+    console.log(`Product ${index}:`);
+    Object.entries(product).forEach(([key, value]) => {
+        console.log(`  ${key}: ${value}`);
+    });
+});
